@@ -21,7 +21,7 @@ runQuery = async (query, queryParams) => {
 
 const getAll = async (state) => {
     let query
-    if(state) {
+    if(state !== null) {
         query = 'MATCH(todos:Todo) WHERE todos.completed=$state RETURN todos'
     } else {
         query = 'MATCH(todos:Todo) RETURN todos'
