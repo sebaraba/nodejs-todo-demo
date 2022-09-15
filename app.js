@@ -5,11 +5,6 @@ var app = express();
 
 const todoRepository = require('./model/TodoRepository')
 
-//placeholders for added task
-var task = ["buy socks", "practise with nodejs"];
-//placeholders for removed task
-var complete = ["finish jquery"];
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 //render css files
