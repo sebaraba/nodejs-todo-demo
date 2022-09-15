@@ -43,7 +43,7 @@ app.get("/", async function(req, res) {
     const openTasks = await todoRepository.getAll(false);
     const completeTasks = await todoRepository.getAll(true);
 
-    res.render("index", { task: task, complete: complete });
+    res.render("index", { task: openTasks, complete: completeTasks });
 });
 
 //set app to listen on port 3000

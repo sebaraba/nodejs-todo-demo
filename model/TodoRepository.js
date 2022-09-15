@@ -1,11 +1,14 @@
 const neo4j = require('neo4j-driver')
 const uuid = require('uuid')
 
-require('dotenv').config()
+// require('dotenv').config()
 
-const driver = neo4j.driver(
-        process.env.NEO4J_URI,
-        neo4j.auth.basic(process.env.NEO4J_USERNAME, process.env.NEO4J_PASSWORD)
+const neo4jUri = "neo4j+s://d4d5145e.databases.neo4j.io"
+const neo4jPass = "arYXXPnecW6Y9ymI8Mg_WpnTDjXjwUT3X1PGU3BC0G8"
+const neo4jUsername = "neo4j"
+
+const driver = neo4j.driver(neo4jUri,
+        neo4j.auth.basic(neo4jUsername, neo4jPass)
     )
 const session = driver.session()
 
